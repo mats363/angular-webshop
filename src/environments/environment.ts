@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  videoUrl: "https://medieinstitutet-wie-products.azurewebsites.net/api/products",
+  postUrl: "https://medieinstitutet-wie-products.azurewebsites.net/api/orders",
+  adminUrl: "https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=23"
 };
 
 /*

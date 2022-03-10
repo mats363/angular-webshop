@@ -1,0 +1,11 @@
+<p>admin works!</p>
+
+<div class = "order-container" *ngFor="let m of ordersFromAPI; let i = index">
+  <h4> Order nr: {{m.id}} </h4> 
+  <ul *ngFor="let r of ordersFromAPI[i].orderRows">
+      <li> Amount: {{r.amount}} </li>
+      <li> Product: {{r.product}}</li>
+      <li> Product ID: {{r.productId}}</li>
+  </ul>
+  <p> Created {{m.created | date}} by {{m.createdBy}}</p>   
+</div>

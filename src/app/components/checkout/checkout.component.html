@@ -1,0 +1,17 @@
+<h4>Your order</h4>
+
+<ul *ngFor="let p of purchases">
+    <li> {{p.name}}</li>
+</ul>
+<p> Total cost: {{ price }} </p>
+<form [formGroup]="userForm">
+    <label for="firstname">Förnamn: </label>
+    <input type="text" id="firstname" formControlName="firstName" />
+    <label for="lastname">Efternamn: </label>
+    <input type="text" id="lastname" formControlName="lastName" />
+    <button (click)="submitOrder()">Order</button>
+    <button (click)="clearOrder()">Empty cart</button>
+</form>
+
+
+
