@@ -1,11 +1,13 @@
-<p>admin works!</p>
-
-<div class = "order-container" *ngFor="let m of ordersFromAPI; let i = index">
-  <h4> Order nr: {{m.id}} </h4> 
-  <ul *ngFor="let r of ordersFromAPI[i].orderRows">
+<section class="order-container">
+  <article class="order" *ngFor="let m of ordersFromAPI; let i = index">
+    <h4> Order nr: {{m.id}} </h4>
+    <ul *ngFor="let r of ordersFromAPI[i].orderRows">
       <li> Amount: {{r.amount}} </li>
       <li> Product: {{r.product}}</li>
       <li> Product ID: {{r.productId}}</li>
-  </ul>
-  <p> Created {{m.created | date}} by {{m.createdBy}}</p>   
-</div>
+    </ul>
+    <p> Total price: {{m.totalPrice}}</p>
+    <p> Payment method: {{m.paymentMethod}}</p>
+    <p> Created {{m.created | date}} by {{m.createdBy}}</p>
+  </article>
+</section>

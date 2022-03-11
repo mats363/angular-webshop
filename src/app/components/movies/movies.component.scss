@@ -1,8 +1,24 @@
-img {
-    max-width: 200px;
+
+
+.container {
+    font-family: arial;
+   
+    
+    header {
+        font-size: 20px;
+        background-color: red;
+        padding: 0px;
+    }
 }
 
 .movie-container {
-    max-width: 200px;
+    
+    
+ 
+    img {
+        width: 100px;
+        object-fit: contain;
+    }
     
 }
+

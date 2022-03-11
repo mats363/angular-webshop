@@ -1,8 +1,11 @@
-<div class = "movie-container" *ngFor="let m of movies; let i = index">
-    <h2> {{ m.name }} </h2>
-    <img [src] = m.imageUrl>
-    <p> {{ m.description }}</p>
-    <p> {{ m.price }}:-</p>
-    <button class="btn" (click)="addToCart(m)"> Add to cart </button>
-</div>
-
+<section class="container">
+    <article class="movie-container" *ngFor="let m of movies; let i = index">
+        <header>
+            <h2> {{ m.name }} </h2>
+        </header>
+        <img [src]=m.imageUrl/>
+        <p> {{ m.description }}</p>
+        <p> {{ m.price }}:-</p>
+        <button class="btn" (click)="addToCart(m)"> Add to cart </button>
+    </article>
+</section>

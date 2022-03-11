@@ -25,7 +25,6 @@ export class CheckoutComponent implements OnInit {
     lastName: new FormControl(''),
   });
 
-  mockData: any = {id:0,companyId:23,created:"0001-01-01T00:00:00",createdBy:"Mats testar",paymentMethod:"Paypal",totalPrice:0,status:0,orderRows:[]};
 
   constructor(private service: ShoppingcartService, private postService: MovieService) { }
 

@@ -1,5 +1,13 @@
 header {
-    background-color:beige;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fafafc;
+    background-color: #141231;
     display: flex;
     justify-content: space-between;
+
+    a {
+        text-decoration: none;
+        align-items: center;  
+    }
 }
+
