@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { IMovie } from 'src/app/models/IMovie';
-import { IOrder } from 'src/app/models/IOrder';
+
 import { IOrderRow } from 'src/app/models/IOrderRow';
 import { Order } from 'src/app/models/Order';
 import { MovieService } from 'src/app/services/movie.service';
@@ -25,24 +25,22 @@ export class CheckoutComponent implements OnInit {
     lastName: new FormControl(''),
   });
 
-
+  orderSubmitted: boolean = false;
   constructor(private service: ShoppingcartService, private postService: MovieService) { }
 
   ngOnInit(): void {
-    this.itemsFromLS = localStorage.getItem("checkout" || "[]"); // Lägg detta i en tjänst istället om det finns tid
+    this.itemsFromLS = localStorage.getItem("checkout" || "[]");
     this.purchases = JSON.parse(this.itemsFromLS);
-    //this.service.purchases$.subscribe((res: IMovie[]) => {
-    //  this.purchases = res;
-    //});
-    //this.service.fromLS();
+ 
     if (this.purchases) {
       this.price = this.service.totalPrice(this.purchases)
     }
   }
 
-  submitOrder() { // Fixa sen så det inte blir dubletter i amount
+  submitOrder() { 
     
     for (let i = 0; i < this.purchases.length; i++) {
+      
       this.orderRow.push(
         {
           productId: this.purchases[i].id,
@@ -62,11 +60,15 @@ export class CheckoutComponent implements OnInit {
     });
 
     this.postService.postOrder(this.newOrder);
+    this.orderSubmitted = true;
+    this.userForm.reset();
+    this.purchases = [];
    
   }
   clearOrder() {
     localStorage.clear()
     this.purchases= [];
     this.price = 0;
+    
   }
 }

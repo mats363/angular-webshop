@@ -13,5 +13,7 @@
     <button (click)="clearOrder()">Empty cart</button>
 </form>
 
-
+<div>
+    <p *ngIf="orderSubmitted">Order submitted! Thank you for your purchase</p>
+</div>
 

@@ -1,13 +1,14 @@
 .order-container { 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: block;
+  margin: 20px;
+  padding: 20px;
 }
 
 .order {
-   max-width: 200px;
+   background-color: #15d373;
+   max-width: 800px;
    padding: 10px;
+   margin: 20px;
    border: 1px solid black;
-   border-radius: 10%;
-   background-color: aliceblue;
+  
 }

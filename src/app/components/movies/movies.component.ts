@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IMovie } from 'src/app/models/IMovie';
 import { MovieService } from 'src/app/services/movie.service';
 import { ShoppingcartService } from 'src/app/services/shoppingcart.service';
-import { StorageService } from 'src/app/services/storage.service';
+
 
 @Component({
   selector: 'app-movies',
@@ -12,7 +12,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class MoviesComponent implements OnInit {
   movies: IMovie[] = [];
 
-  constructor(private service: MovieService, private service2: ShoppingcartService, private storageService: StorageService) { }
+  constructor(private service: MovieService, private service2: ShoppingcartService) { }
 
   ngOnInit(): void { // Hämtar lista med filmer från tjänsten
     this.service.movies$.subscribe((dataFromService: IMovie[]) => {

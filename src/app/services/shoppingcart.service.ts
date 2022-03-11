@@ -7,7 +7,7 @@ import { IMovie } from '../models/IMovie';
 })
 export class ShoppingcartService {
   private purchases: IMovie[] = [];
-  private itemsFromLS: any = [];
+  //private itemsFromLS: any = [];
   purchases$: Observable<IMovie[]> = of(this.purchases); // Gör till en observable
   
   
@@ -29,5 +29,7 @@ export class ShoppingcartService {
     console.log(cost);
     return cost;
   }
+
+  
 
 }

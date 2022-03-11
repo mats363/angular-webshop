@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IMovie } from '../models/IMovie';
-import { IOrder } from '../models/IOrder';
+
 import { Order } from '../models/Order';
 
 @Injectable({
@@ -19,10 +19,6 @@ export class MovieService {
 
   private collectedOrders = new Subject<Order[]>();
   collectedOrders$ = this.collectedOrders.asObservable();
-
-  private ordersToPrint: IMovie[] = [];
-
-  //ordersToPrint$ = this.ordersToPrint.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -47,7 +43,7 @@ export class MovieService {
       this.collectedOrders.next(result);
     })
   }
-  //test(): IMovie[] {
+  
     
    
       
